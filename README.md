@@ -7,6 +7,9 @@ Open `index.html` in a browser. Bootstrap, Bootstrap Icons, and fonts use their 
 
 The homepage hero uses the local `images/hero/camarines-sur-aerial.mp4` clip when motion is allowed, with the Mayon image as its poster and fallback. The muted video plays from 0:14 to 1:23, then restarts at 0:14. If the clip is shorter than 1:23, it restarts when it reaches the end; it is not loaded when reduced motion is requested.
 
+## Live site
+Visit [Explore Bicol on GitHub Pages](https://ari-yana143.github.io/explore-bicol/). Changes pushed to `main` deploy automatically.
+
 ## Content and photos
 - `content/bicol-content.md` is the instructor-provided content extracted from `midterm-ni-sir-james.docx`; `js/data.js` is generated from those listed items.
 - `IMAGE_CHECKLIST.md` lists every image path, the intended subject, and search keywords. Add matching, properly licensed `.jpg` files at those paths.
