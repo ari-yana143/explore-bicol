@@ -215,7 +215,7 @@ const BICOL = {
           "name":  "Apuao Grande Island",
           "location":  "Mercedes",
           "description":  "A popular island destination with white sand, clear water, green landscapes, and a quiet coastal environment.",
-          "image":  "images/camarines-norte/apuao-grande-island.jpg",
+          "image":  "images/camarines-norte/apuao-grande-island.JPG",
           "imageAlt":  "Apuao Grande Island in Mercedes, Camarines Norte",
           "imageCredit":  ""
       },
@@ -226,7 +226,7 @@ const BICOL = {
           "name":  "Apuao Pequena Island",
           "location":  "near Mercedes",
           "description":  "A smaller island near Apuao Grande, known for its peaceful beach, clear water, rock formations, and natural surroundings.",
-          "image":  "images/camarines-norte/apuao-pequena-island.jpg",
+          "image":  "images/camarines-norte/apuao-pequena-island.JPG",
           "imageAlt":  "Apuao Pequena Island in near Mercedes, Camarines Norte",
           "imageCredit":  ""
       },
@@ -1204,7 +1204,7 @@ const BICOL = {
           "name":  "Magayon Festival",
           "location":  "Province of Albay",
           "description":  "Celebrates Albay’s culture, history, beauty, and natural attractions through cultural dances, parades, food exhibitions, and tourism activities.",
-          "image":  "images/festivals/magayon-festival.jpg",
+          "image":  "images/albay/magayon-festival.jpg",
           "imageAlt":  "Magayon Festival in Province of Albay, Albay",
           "imageCredit":  ""
       },
@@ -1226,7 +1226,7 @@ const BICOL = {
           "name":  "Kahulugan Festival",
           "location":  "Municipality of Malinao",
           "description":  "Celebrates Malinao’s history, culture, traditions, and achievements.",
-          "image":  "images/festivals/kahulugan-festival.jpg",
+          "image":  "images/albay/kahulugan.jpg",
           "imageAlt":  "Kahulugan Festival in Municipality of Malinao, Albay",
           "imageCredit":  ""
       },
@@ -1237,7 +1237,7 @@ const BICOL = {
           "name":  "Pinangat Festival",
           "location":  "Municipality of Camalig",
           "description":  "Highlights Camalig’s signature dish through cooking activities, food displays, cultural presentations, and community events.",
-          "image":  "images/festivals/pinangat-festival.jpg",
+          "image":  "images/albay/pinangat.jpg",
           "imageAlt":  "Pinangat Festival in Municipality of Camalig, Albay",
           "imageCredit":  ""
       },
@@ -1248,7 +1248,7 @@ const BICOL = {
           "name":  "Coron Festival",
           "location":  "Municipality of Tiwi",
           "description":  "Celebrates Tiwi’s history, traditions, and local identity while promoting its attractions and products.",
-          "image":  "images/festivals/coron-festival.jpg",
+          "image":  "images/albay/Coron-Festival_PTCCO-Albay-FB-1-scaled.jpg",
           "imageAlt":  "Coron Festival in Municipality of Tiwi, Albay",
           "imageCredit":  ""
       },
@@ -1259,7 +1259,7 @@ const BICOL = {
           "name":  "Tabak Festival",
           "location":  "Tabaco City",
           "description":  "Celebrates Tabaco’s history and identity; its name is associated with the city’s traditional bolo-making industry.",
-          "image":  "images/festivals/tabak-festival.jpg",
+          "image":  "images/albay/tabak.jpg",
           "imageAlt":  "Tabak Festival in Tabaco City, Albay",
           "imageCredit":  ""
       },
@@ -1270,7 +1270,7 @@ const BICOL = {
           "name":  "Ani Festival",
           "location":  "Municipality of Oas",
           "description":  "A thanksgiving celebration for agricultural harvests, highlighting farming, local products, cultural dances, and cooperation.",
-          "image":  "images/festivals/ani-festival.jpg",
+          "image":  "images/albay/ani.jpg",
           "imageAlt":  "Ani Festival in Municipality of Oas, Albay",
           "imageCredit":  ""
       },
@@ -1281,7 +1281,7 @@ const BICOL = {
           "name":  "Layag Festival",
           "location":  "Municipality of Bacacay",
           "description":  "Celebrates Bacacay’s coastal identity and fishing traditions through cultural activities, parades, and tourism events.",
-          "image":  "images/festivals/layag-festival.jpg",
+          "image":  "images/albay/layag.jpg",
           "imageAlt":  "Layag Festival in Municipality of Bacacay, Albay",
           "imageCredit":  ""
       },
@@ -1292,7 +1292,7 @@ const BICOL = {
           "name":  "Karakol Festival",
           "location":  "Municipality of Libon",
           "description":  "A religious and cultural celebration involving dancing, music, processions, and community participation.",
-          "image":  "images/festivals/karakol-festival.jpg",
+          "image":  "images/albay/karakol.jpg",
           "imageAlt":  "Karakol Festival in Municipality of Libon, Albay",
           "imageCredit":  ""
       },
@@ -1303,7 +1303,7 @@ const BICOL = {
           "name":  "Pandarag Festival",
           "location":  "Municipality of Polangui",
           "description":  "Showcases Polangui’s traditions, history, local products, and cultural identity.",
-          "image":  "images/festivals/pandarag-festival.jpg",
+          "image":  "images/albay/pandarag.jpg",
           "imageAlt":  "Pandarag Festival in Municipality of Polangui, Albay",
           "imageCredit":  ""
       },
@@ -1768,7 +1768,7 @@ const BICOL = {
           "name":  "Camarines Norte during World War II",
           "location":  "",
           "description":  "The province was affected by Japanese occupation, military activity, evacuation, and resistance movements; local stories and memorials preserve this history.",
-          "image":  "images/camarines-norte/camarines-norte-during-world-war-ii.jpg",
+          "image":  "images/camarines-norte/camarines-norte-during-world-war-II.jpg",
           "imageAlt":  "Camarines Norte during World War II, Camarines Norte",
           "imageCredit":  ""
       },
