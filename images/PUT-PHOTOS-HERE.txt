@@ -1,0 +1,77 @@
+SITE PHOTO MANIFEST
+===================
+The photos are bundled in this folder under the filenames below. To customize one,
+replace its file with a .jpg using exactly the same lowercase filename. Landscape
+photos around 1200-1600 px wide work best. See PHOTO-CREDITS.txt for source pages
+and licenses; a few images use Commons URLs with the local file as a fallback.
+
+--- BANNER PHOTOS (top of each page) ---
+hero-mayon.jpg   home page: Mayon Volcano
+hero-beaches.jpg   beaches page
+hero-spots.jpg   tourist spots page
+hero-festivals.jpg   festivals page
+hero-food.jpg   food page
+hero-history.jpg   history page
+hero-contact.jpg   plan your trip page
+
+--- PROVINCES ---
+province-albay.jpg   Albay
+province-camnorte.jpg   Camarines Norte
+province-camsur.jpg   Camarines Sur
+province-catanduanes.jpg   Catanduanes
+province-masbate.jpg   Masbate
+province-sorsogon.jpg   Sorsogon
+
+--- BEACHES ---
+misibis-bay.jpg   Misibis Bay
+tiwi-beach.jpg   Tiwi Beach
+bagasbas-beach.jpg   Bagasbas Beach
+calaguas-islands.jpg   Calaguas Islands
+caramoan-islands.jpg   Caramoan Islands
+pasacao-beach.jpg   Pasacao Beach
+puraran-beach.jpg   Puraran Beach
+twin-rock-beach.jpg   Twin Rock Beach
+bituon-beach.jpg   Bituon Beach
+buntod-sandbar.jpg   Buntod Reef and Sandbar
+subic-beach.jpg   Subic Beach
+rizal-beach.jpg   Rizal Beach
+
+--- TOURIST SPOTS ---
+mayon-volcano.jpg   Mayon Volcano Natural Park
+cagsawa-ruins.jpg   Cagsawa Ruins
+daraga-church.jpg   Daraga Church
+mount-labo.jpg   Mount Labo
+apuao-grande.jpg   Apuao Grande Island
+camsur-watersports.jpg   Camsur Watersports Complex (CWC)
+mount-isarog.jpg   Mount Isarog Natural Park
+penafrancia-basilica.jpg   Peñafrancia Shrine and Basilica
+binurong-point.jpg   Binurong Point
+maribina-falls.jpg   Maribina Falls
+ticao-island.jpg   Ticao Island
+burias-island.jpg   Burias Island
+donsol-butanding.jpg   Donsol Whale Shark Interaction
+bulusan-lake.jpg   Bulusan Volcano Natural Park
+juag-lagoon.jpg   Juag Lagoon and Marine Sanctuary
+
+--- FESTIVALS ---
+magayon-festival.jpg   Magayon Festival
+ibalong-festival.jpg   Ibalong Festival
+pineapple-festival.jpg   Pineapple Festival
+penafrancia-festival.jpg   Peñafrancia Festival
+abaca-festival.jpg   Abaca Festival
+rodeo-masbateno.jpg   Rodeo Masbateño
+pantomina-festival.jpg   Pantomina Festival
+
+--- FOOD ---
+pinangat.jpg   Pinangat
+sili-ice-cream.jpg   Sili Ice Cream
+daet-pineapple.jpg   Daet Pineapple
+laing.jpg   Laing
+kinalas.jpg   Kinalas
+pili-nuts.jpg   Pili Nut Delicacies
+pacific-seafood.jpg   Fresh Pacific Seafood
+kakanin.jpg   Kakanin (Rice Cakes)
+masbate-beef.jpg   Masbate Beef
+daing.jpg   Daing (Dried Fish)
+ginabot.jpg   Ginabot
+bicol-express.jpg   Bicol Express

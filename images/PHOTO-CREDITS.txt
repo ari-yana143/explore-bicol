@@ -1,0 +1,69 @@
+Explore Bicol photo credits
+This file records source pages and licenses for existing local photos. The website loads photos from local paths only; it does not fetch remote photo URLs. Some older files listed below are explicitly marked as related-photo fallbacks and must not be used for a different named subject. For each new photo added from IMAGE_CHECKLIST.md, record the author, source page, and license here and update that item's imageCredit in js/data.js.
+
+hero-mayon.jpg — Uses the Mayon and Cagsawa photo credited for hero-spots.jpg.
+hero-beaches.jpg — “File:Calaguas, Camarines Norte.jpg” by Superenricolo; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Calaguas,_Camarines_Norte.jpg
+hero-spots.jpg — “File:Cagsaua Ruin and Mayon Volcano.jpg” by RaywollesenFortes; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Cagsaua_Ruin_and_Mayon_Volcano.jpg
+hero-festivals.jpg — Uses the Ibalong Festival photo credited for ibalong-festival.jpg.
+hero-history.jpg — “File:Mayon Volcano & Cagsawa Church, Daraga, Albay, Dec 2025 (1).jpg” by Ralff Nestor Nacor; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Mayon_Volcano_%26_Cagsawa_Church,_Daraga,_Albay,_Dec_2025_(1).jpg
+hero-contact.jpg — “File:Legazpi - panoramio (2).jpg” by AwOiSoAk KaOsIoWa; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Legazpi_-_panoramio_(2).jpg
+province-albay.jpg — Reuses the Mayon and Cagsawa photo credited for hero-spots.jpg.
+province-camnorte.jpg — “File:Calaguas, Camarines Norte.jpg” by Superenricolo; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Calaguas,_Camarines_Norte.jpg
+province-camsur.jpg — “File:Cagbalinad Island, Caramoan, Camarines Sur.jpg” by JannahTepace; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Cagbalinad_Island,_Caramoan,_Camarines_Sur.jpg
+province-catanduanes.jpg — “File:Binurong Point, Catanduanes 1.jpg” by FroyAgta; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Binurong_Point,_Catanduanes_1.jpg
+province-sorsogon.jpg — “File:Bulusan Lake at Bulusan, Sorsogon.jpg” by MarvinBikolano; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Bulusan_Lake_at_Bulusan,_Sorsogon.jpg
+misibis-bay.jpg — Related local beach photo reuses the Calaguas photo credited for calaguas-islands.jpg.
+bagasbas-beach.jpg — “File:BEACH BAGASBAS DEZEMBER 2012 - panoramio.jpg” by KAI LARS SCHERER; CC BY 3.0; https://commons.wikimedia.org/wiki/File:BEACH_BAGASBAS_DEZEMBER_2012_-_panoramio.jpg
+calaguas-islands.jpg — “File:Calaguas, Vinzons, Camarines Norte, Philippines - panoramio.jpg” by randomtraveller; CC BY 3.0; https://commons.wikimedia.org/wiki/File:Calaguas,_Vinzons,_Camarines_Norte,_Philippines_-_panoramio.jpg
+caramoan-islands.jpg — “File:Cagbalinad Island, Caramoan, Camarines Sur.jpg” by JannahTepace; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Cagbalinad_Island,_Caramoan,_Camarines_Sur.jpg
+pasacao-beach.jpg — “File:A beach in Pasacao Camarines Sur.jpg” by Pacific brent; CC BY 4.0; https://commons.wikimedia.org/wiki/File:A_beach_in_Pasacao_Camarines_Sur.jpg
+puraran-beach.jpg — “File:Puraran beach.jpg” by L. from ROTHERHAM, YORKSHIRE, UNITED KINGDOM; CC BY 2.0; https://commons.wikimedia.org/wiki/File:Puraran_beach.jpg
+twin-rock-beach.jpg — “File:Twin Rock Beach Resort 03.jpg” by Danbarrameda; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Twin_Rock_Beach_Resort_03.jpg
+mayon-volcano.jpg — Local fallback reuses the Mayon and Cagsawa photo credited for hero-spots.jpg; the exact Mayon photo below is used when online.
+binurong-point.jpg — “File:Binurong Point, Catanduanes.jpg” by ASEBASTIAN1218; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Binurong_Point,_Catanduanes.jpg
+bulusan-lake.jpg — “File:Bulusan Lake at Bulusan, Sorsogon.jpg” by MarvinBikolano; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Bulusan_Lake_at_Bulusan,_Sorsogon.jpg
+ibalong-festival.jpg — “File:Bini at Ibalong Festival 2025 (2).jpg” by Hisham Ismail; Public domain; https://commons.wikimedia.org/wiki/File:Bini_at_Ibalong_Festival_2025_(2).jpg
+pinangat.jpg — Related Bicol-food photo reuses the Laing photo credited for laing.jpg.
+province-masbate.jpg — “File:Buntod Reef Marine Sanctuary.jpg” by Bert Andone; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Buntod_Reef_Marine_Sanctuary.jpg
+bituon-beach.jpg — “File:Beach in Masbate.jpg” by Marife.altabano; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Beach_in_Masbate.jpg
+camsur-watersports.jpg — “File:Wakeboardingcwc.jpg” by Ninjakeg; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Wakeboardingcwc.jpg
+mount-isarog.jpg — “File:Mount Isarog View at Antipolo Baao Camarines Sur.jpg” by Zyrahila; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Mount_Isarog_View_at_Antipolo_Baao_Camarines_Sur.jpg
+penafrancia-basilica.jpg — “File:Basilica Minore of Our Lady of Penafrancia, Naga City, Philippines.JPG” by Totle12; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Basilica_Minore_of_Our_Lady_of_Penafrancia,_Naga_City,_Philippines.JPG
+ticao-island.jpg — Related local island photo reuses the Burias Island photo credited below.
+sili-ice-cream.jpg — “File:1st Collonial Grill's Sili Ice Cream (Level1).jpg” by ShmilyDigital; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:1st_Collonial_Grill%27s_Sili_Ice_Cream_(Level1).jpg
+daet-pineapple.jpg — “File:04012jfQueen Formosa pineapple Philippines Malolos Cityfvf 01.jpg” by Judgefloro; CC0; https://commons.wikimedia.org/wiki/File:04012jfQueen_Formosa_pineapple_Philippines_Malolos_Cityfvf_01.jpg
+laing.jpg — “File:Gulay na Natong.jpg” by MarvinBikolano; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Gulay_na_Natong.jpg
+kinalas.jpg — “File:Kinalas Series by Kitchen Everywhere.jpg” by KDCwrites; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Kinalas_Series_by_Kitchen_Everywhere.jpg
+pili-nuts.jpg — “File:Black sesame Malipot Albay Pilinut CandyB.jpg” by Author not specified; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Black_sesame_Malipot_Albay_Pilinut_CandyB.jpg
+daing.jpg — “File:"Pinoy Daing".jpg” by Robertmarrel; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:%22Pinoy_Daing%22.jpg
+bicol-express.jpg — “File:Bicol Express 2(1).jpg” by MarvinBikolano; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Bicol_Express_2(1).jpg
+burias-island.jpg — “File:Sunset in Burias Island, San Pascual, Masbate.jpg” by Irvin Parco Sto. Tomas; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Sunset_in_Burias_Island,_San_Pascual,_Masbate.jpg
+donsol-butanding.jpg — “File:Butanding Whale Shark (Donsol, Sorsogon) (794278440).jpg” by Shubert Ciencia; CC BY 2.0; https://commons.wikimedia.org/wiki/File:Butanding_Whale_Shark_(Donsol,_Sorsogon)_(794278440).jpg
+mount-labo.jpg — Related local mountain photo reuses mount-isarog.jpg.
+apuao-grande.jpg — Fallback reuses calaguas-islands.jpg; the exact Apuao Grande photo below is used when online.
+maribina-falls.jpg — Related local nature photo reuses bulusan-lake.jpg.
+juag-lagoon.jpg — Related local marine photo reuses province-masbate.jpg.
+magayon-festival.jpg — Fallback reuses ibalong-festival.jpg; the exact Magayon Festival photo below is used when online.
+pineapple-festival.jpg — Related local festival photo reuses ibalong-festival.jpg.
+penafrancia-festival.jpg — Fallback reuses penafrancia-basilica.jpg; the exact procession photo below is used when online.
+abaca-festival.jpg — Related local festival photo reuses ibalong-festival.jpg.
+rodeo-masbateno.jpg — Related local festival photo reuses ibalong-festival.jpg.
+pantomina-festival.jpg — Related local festival photo reuses ibalong-festival.jpg.
+pacific-seafood.jpg — Related local seafood photo reuses daing.jpg.
+kakanin.jpg — Local fallback reuses laing.jpg; the exact Biko/kakanin photo below is used when online.
+masbate-beef.jpg — Local fallback reuses bicol-express.jpg; the closest available free beef-dish photo below is used when online.
+ginabot.jpg — Local fallback reuses bicol-express.jpg; a related Filipino street-food photo below is used when online.
+apuao-grande.jpg — “Apuao Grande I. beachfront, Mercedes, Camarines Norte” by Shubert Ciencia; CC BY 2.0; https://commons.wikimedia.org/wiki/File:Apuao_Grande_I._beachfront,_Mercedes,_Camarines_Norte_(S._Ciencia)_-_Flickr.jpg
+magayon-festival.jpg — “Magayon Festival” by Dexbaldon; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Magayon_Festival.jpg
+penafrancia-festival.jpg — “Traslacion (Penafrancia Festival)” by LeahLhey; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Traslacion_(Penafrancia_Festival).jpg
+kakanin.jpg — “Biko (rice cake or kakanin)” by Glenda226; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Biko-this_rice_cake_or_kakanin_is_made_by_glutinous_rice,coconut_and_muscovado_sugar.A_native_kakanin_in_Philippines.The_texture_of_this_rice_cake_is_chewy.It_is_topped_with_%27latik%27.Perfect_pair_with_coffee.jpg
+masbate-beef.jpg — “Bulalo and marrow” by GuyHimGuy; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Bulalo_and_marrow.jpg
+ginabot.jpg — “Kwek-Kwek and fried isaw” by Aerous; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Kwek-Kwek_and_fried_isaw.jpg
+mayon-volcano.jpg — “Mayon Volcano, Albay, Philippines” by Johrabino; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Mayon_Volcano,_Albay,_Philippines.jpg
+hero-food.jpg — “Bicol Express at La Herencia Comida” by Ymirazudis; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Bicol_Express_at_La_Herencia_Comida.jpg
+tiwi-beach.jpg — “Corangon Shoal” by Rommel Natanauan; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Corangon_Shoal.jpg
+buntod-sandbar.jpg — “BUNTOD MASBATE SANDBAR” by Johrabino; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:BUNTOD_MASBATE_SANDBAR.jpg
+subic-beach.jpg — “Powdery Shores” by Sheena Aloner; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Powdery_Shores.jpg
+rizal-beach.jpg — “Child-friendly Rizal beach” by Irvin Parco Sto. Tomas; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Child-friendly_Rizal_beach.jpg
+cagsawa-ruins.jpg — “Cagsaua Church Ruins - Daraga, Albay” by M0N FEDERE MD; CC BY-SA 3.0; https://commons.wikimedia.org/wiki/File:Cagsaua_Church_Ruins_-_Daraga,_Albay.tiff
+daraga-church.jpg — “Daraga Church, Albay, Dec 2025 (2)” by Ralff Nestor Nacor; CC BY-SA 4.0; https://commons.wikimedia.org/wiki/File:Daraga_Church,_Albay,_Dec_2025_(2).jpg

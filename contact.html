@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Your Trip – Explore Bicol</title>
+  <meta name="description" content="Send a trip inquiry and plan your Bicol adventure.">
+  <script>try{var t=localStorage.getItem('bicolTheme');if(t)document.documentElement.setAttribute('data-bs-theme',t)}catch(e){}</script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="images/explore-bicol-mark.svg">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+  <main>
+    <section class="hero hero-sm" aria-label="Plan your trip">
+      <img class="hero-bg" src="images/hero/hero-contact.jpg" alt="Legazpi skyline and coastline at sunset" loading="lazy" onerror="Site.fallback(this)">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content"><span class="hero-badge">Let's go</span><h1 class="mt-3">Plan Your Trip</h1><p class="lead">Tell us where and when, and attach any itinerary files or photos.</p></div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <div class="panel">
+              <div id="successMsg" class="alert alert-success d-none" role="alert"><i class="bi bi-check-circle-fill"></i> <span></span></div>
+              <form id="tripForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6"><label class="form-label fw-bold" for="name">Full name</label>
+                    <input class="form-control" id="name" name="name" data-validate autocomplete="name" required><div class="invalid-feedback"></div></div>
+                  <div class="col-md-6"><label class="form-label fw-bold" for="email">Email</label>
+                    <input class="form-control" id="email" name="email" type="email" data-validate autocomplete="email" required><div class="invalid-feedback"></div></div>
+                  <div class="col-md-6"><label class="form-label fw-bold" for="phone">Phone number</label>
+                    <input class="form-control" id="phone" name="phone" type="tel" placeholder="09123456789" data-validate autocomplete="tel" required><div class="invalid-feedback"></div></div>
+                  <div class="col-md-6"><label class="form-label fw-bold" for="province">Province</label>
+                    <select class="form-select" id="province" name="province" data-validate required></select><div class="invalid-feedback"></div></div>
+                  <div class="col-12"><label class="form-label fw-bold" for="tripDate">Trip date</label>
+                    <input class="form-control" id="tripDate" name="tripDate" type="date" data-validate required>
+                    <div class="form-text">Past dates are disabled.</div><div class="invalid-feedback"></div></div>
+                  <div class="col-12"><label class="form-label fw-bold" for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" data-validate placeholder="Tell us what you would like to see and do (at least 20 characters)." required></textarea><div class="invalid-feedback"></div></div>
+                  <div class="col-12">
+                    <label class="form-label fw-bold" for="fileInput">Attachments (optional)</label>
+                    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload files by dragging or browsing">
+                      <i class="bi bi-cloud-arrow-up"></i>
+                      <p class="mb-1 fw-bold">Drag &amp; drop files here, or click to browse</p>
+                      <p class="small text-muted mb-0">JPG, PNG or PDF &middot; max 2 MB each &middot; up to 5 files</p>
+                      <input type="file" id="fileInput" class="d-none" multiple accept=".jpg,.jpeg,.png,.pdf">
+                    </div>
+                    <div class="text-danger small mt-2 d-none" id="dzError" role="alert"></div>
+                    <div id="fileList"></div>
+                  </div>
+                  <div class="col-12"><button type="submit" class="btn btn-coral btn-lg"><i class="bi bi-send"></i> Send Inquiry</button></div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <h2 class="h4 mb-3">Frequently Asked Questions</h2>
+            <div class="accordion" id="faq">
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">When is the best time to visit Bicol?</button></h3>
+                <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq"><div class="accordion-body">The drier months, roughly March to May, are great for beaches and island hopping. Typhoon season usually peaks later in the year, so check forecasts before traveling.</div></div></div>
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">How do I get to Bicol?</button></h3>
+                <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">You can fly into airports such as Legazpi or Naga (Pili), or take a long-distance bus or train from Manila.</div></div></div>
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">Is Mayon Volcano safe to visit?</button></h3>
+                <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Viewpoints are usually safe, but areas near the volcano may be restricted. Always follow the latest PHIVOLCS alert level and local advisories.</div></div></div>
+              <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q4">Is my inquiry really sent?</button></h3>
+                <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">No. This is a school project, so the form only demonstrates validation and shows a success message. Nothing is sent or stored.</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore Bicol – Discover the Wonders of Region V</title>
+  <meta name="description" content="A tourism guide to the six provinces of Bicol: beaches, spots, festivals, food and history.">
+  <script>try{var t=localStorage.getItem('bicolTheme');if(t)document.documentElement.setAttribute('data-bs-theme',t)}catch(e){}</script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="images/explore-bicol-mark.svg">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero hero-home" aria-label="Welcome to Bicol">
+      <div class="container hero-home-grid">
+        <div class="hero-content">
+          <span class="hero-badge">Region V &middot; Philippines</span>
+          <h1 class="mt-3">Explore Bicol</h1>
+          <p class="lead">Discover the Wonders of Region V. Find island shores, mountain views, local food, festivals, and stories across six provinces.</p>
+          <div class="hero-search mt-4">
+            <i class="bi bi-search search-icon" aria-hidden="true"></i>
+            <input id="heroSearch" class="search-input form-control" type="search" placeholder="Search places, food, festivals, provinces…" autocomplete="off" aria-label="Search destinations" aria-autocomplete="list" aria-controls="heroSearchBox" aria-expanded="false">
+            <div id="heroSearchBox" class="search-box list-group" role="listbox"></div>
+          </div>
+          <a href="#provinces" class="btn btn-coral mt-4">Start Exploring <i class="bi bi-arrow-down" aria-hidden="true"></i></a>
+        </div>
+        <div class="hero-art">
+          <img class="hero-bg" src="images/hero/hero-mayon.jpg" alt="" fetchpriority="high" onerror="Site.fallback(this)">
+          <video class="hero-video" data-src="images/hero/camarines-sur-aerial.mp4" poster="images/hero/hero-mayon.jpg" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVINCES -->
+    <section class="section" id="provinces">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-kicker">Six provinces</div>
+          <h2 class="section-title">Pick Your Province</h2>
+          <p class="text-muted">Tap the heart to save your favorites.</p>
+        </div>
+        <div class="row g-4" id="provinceCards"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED CAROUSEL -->
+    <section class="section section-alt" aria-label="Featured destinations">
+      <div class="container">
+        <div class="text-center mb-4">
+          <div class="section-kicker">Featured</div>
+          <h2 class="section-title">Must-See Destinations</h2>
+        </div>
+        <div class="bc-carousel" id="bcCarousel">
+          <div class="bc-track" id="bcTrack"></div>
+          <button class="bc-nav bc-prev" id="bcPrev" aria-label="Previous slide"><i class="bi bi-chevron-left"></i></button>
+          <button class="bc-nav bc-next" id="bcNext" aria-label="Next slide"><i class="bi bi-chevron-right"></i></button>
+          <div class="bc-dots" id="bcDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY VISIT -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-kicker">Why visit</div>
+          <h2 class="section-title">Why Visit Bicol?</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal"><div class="feature-box"><div class="feature-icon"><i class="bi bi-fire"></i></div><h3 class="h5">Iconic Volcanoes</h3><p class="text-muted mb-0">From Mayon's perfect cone to the quiet crater lake of Bulusan.</p></div></div>
+          <div class="col-md-6 col-lg-3 reveal"><div class="feature-box"><div class="feature-icon"><i class="bi bi-water"></i></div><h3 class="h5">Island Beaches</h3><p class="text-muted mb-0">Calaguas, Caramoan and the surf breaks of Catanduanes.</p></div></div>
+          <div class="col-md-6 col-lg-3 reveal"><div class="feature-box"><div class="feature-icon"><i class="bi bi-balloon-heart"></i></div><h3 class="h5">Vibrant Festivals</h3><p class="text-muted mb-0">Faith, folklore and street dancing all year round.</p></div></div>
+          <div class="col-md-6 col-lg-3 reveal"><div class="feature-box"><div class="feature-icon"><i class="bi bi-cup-hot"></i></div><h3 class="h5">Bold Flavors</h3><p class="text-muted mb-0">Coconut milk, chilies and fresh seafood on every table.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS + CHART -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="text-center mb-5">
+          <div class="section-kicker">By the numbers</div>
+          <h2 class="section-title">Bicol at a Glance</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5 reveal"><div class="panel h-100"><h3 class="h5 mb-4">What's in the guide</h3><div id="stats"></div></div></div>
+          <div class="col-lg-7 reveal"><div class="panel h-100">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+              <h3 class="h5 mb-0">Destinations per province</h3>
+              <select id="chartCategory" class="form-select w-auto" aria-label="Filter chart by category">
+                <option value="all">All categories</option><option value="beaches">Beaches</option><option value="spots">Tourist spots</option>
+                <option value="festivals">Festivals</option><option value="foods">Foods</option><option value="history">History &amp; culture</option>
+              </select>
+            </div>
+            <div class="chart-wrap"><canvas id="destChart" role="img" aria-label="Bar chart of destinations per province"></canvas></div>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORER PROGRESS -->
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center"><div class="col-lg-7"><div class="panel reveal">
+          <h2 class="h4"><i class="bi bi-trophy-fill text-warning"></i> Bicol Explorer Progress</h2>
+          <p class="text-muted">Tick the provinces you have visited. Your progress is saved on this device.</p>
+          <div class="row" id="explorerList"></div>
+          <div class="d-flex justify-content-between mt-3"><strong id="explorerMsg"></strong><strong id="explorerPct">0%</strong></div>
+          <div class="progress mt-1" role="progressbar" aria-label="Explorer progress" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" id="explorerBar" style="width:0"></div></div>
+        </div></div></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section pt-0">
+      <div class="container">
+        <div class="panel text-center py-5 reveal cta-panel">
+          <h2 class="text-white">Ready to Plan Your Adventure?</h2>
+          <p class="mb-4">Tell us when and where you want to go and we'll help you get started.</p>
+          <a href="contact.html" class="btn btn-coral btn-lg">Plan Your Trip</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>
