@@ -1096,6 +1096,28 @@ const BICOL = {
           "imageCredit":  ""
       },
       {
+          "id":  "tablea-cacao",
+          "province":  "camsur",
+          "category":  "foods",
+          "name":  "Tablea de Cacao",
+          "location":  "",
+          "description":  "Camarines Sur Tablea de Cacao is a traditional Filipino treasure crafted from 100% pure, locally grown cacao beans. Lovingly roasted, ground, and molded by local farmers, these rich cacao tablets carry a deep, authentic aroma perfect for brewing a classic, comforting cup of Bicolano tsokolate or adding a robust chocolate flavor to native desserts.",
+          "image":  "images/food/tablea-cacao.jpg",
+          "imageAlt":  "Tablea de Cacao, a food item from Camarines Sur",
+          "imageCredit":  "Credit belongs to the rightful owner."
+      },
+      {
+          "id":  "pili-tart",
+          "province":  "camsur",
+          "category":  "foods",
+          "name":  "Pili Tarts",
+          "location":  "",
+          "description":  "Savor a true Bicolano favorite with our Camarines Sur Pili Tarts. Made with 100% locally harvested pili nuts, these bite-sized pastries balance a delicate, flaky crust with a rich, buttery filling—making them the perfect snack, dessert, or pasalubong (souvenir gift) from the region.",
+          "image":  "images/food/pili-tart.jpg",
+          "imageAlt":  "Pili Tarts, a food item from Camarines Sur",
+          "imageCredit":  "Credit belongs to the rightful owner."
+      },
+      {
           "id":  "linat-ang-tulingan",
           "province":  "catanduanes",
           "category":  "foods",

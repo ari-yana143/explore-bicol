@@ -112,6 +112,8 @@ Tourist Spots on Land
 5. Haciendas de Naga — Naga City: A family-friendly attraction with gardens, pools, recreational areas, and nature-based activities.
 Food
 1. Sinapot: A snack made from saba bananas coated in flour or batter and fried until golden brown.
+2. Tablea de Cacao: Camarines Sur Tablea de Cacao is a traditional Filipino treasure crafted from 100% pure, locally grown cacao beans. Lovingly roasted, ground, and molded by local farmers, these rich cacao tablets carry a deep, authentic aroma perfect for brewing a classic, comforting cup of Bicolano tsokolate or adding a robust chocolate flavor to native desserts.
+3. Pili Tarts: Savor a true Bicolano favorite with our Camarines Sur Pili Tarts. Made with 100% locally harvested pili nuts, these bite-sized pastries balance a delicate, flaky crust with a rich, buttery filling—making them the perfect snack, dessert, or pasalubong (souvenir gift) from the region.
 Festivals
 1. Peñafrancia Festival — Naga City: A major religious celebration honoring Our Lady of Peñafrancia, with novena masses, processions, cultural events, and a fluvial procession.
 2. Voyadores Festival — Naga City: Features devotees carrying the image of Our Lady of Peñafrancia from the basilica to the cathedral and forms part of the Peñafrancia celebration.
