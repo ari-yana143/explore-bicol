@@ -26,6 +26,7 @@ function filterButtons(container, onChange) {
     const b = e.target.closest('[data-p]'); if (!b) return;
     $$('.btn-pill', container).forEach(x => x.classList.toggle('active', x === b));
     moveIndicator();
+    b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
     onChange(b.dataset.p);
   });
 }
@@ -45,11 +46,8 @@ function gallery(type) {
     cur = p; Site.spinner.show('Loading ' + type + '…');
     setTimeout(() => { draw(); Site.spinner.hide(); }, 450);
   });
-  const open = el => { const it = items.find(i => i.id === el.dataset.id); if (it) Site.openModal(it); };
-  grid.addEventListener('click', e => { const c = e.target.closest('[data-id]'); if (c) open(c); });
-  grid.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { const c = e.target.closest('[data-id]'); if (c) { e.preventDefault(); open(c); } }
-  });
+  const open = el => { const it = items.find(i => i.id === el.dataset.openId); if (it) Site.openModal(it); };
+  grid.addEventListener('click', e => { const button = e.target.closest('[data-open-id]'); if (button) open(button); });
   setTimeout(() => {
     draw();
     const id = new URLSearchParams(location.search).get('open');
@@ -117,27 +115,9 @@ function initHome() {
   const pc = $('#provinceCards');
   pc.innerHTML = Site.skeleton(6, 'col-6 col-lg-4');
   setTimeout(() => {
-    const favs = Site.favs.get();
-    pc.innerHTML = B.provinces.map(p => `
-      <div class="col-6 col-lg-4 reveal">
-        <div class="prov-card h-100 position-relative">
-          <button class="heart-btn ${favs.includes(p.id) ? 'active' : ''}" data-fav="${p.id}" aria-label="Favorite ${p.name}" aria-pressed="${favs.includes(p.id)}"><i class="bi ${favs.includes(p.id) ? 'bi-heart-fill' : 'bi-heart'}"></i></button>
-          <a href="history.html#${p.id}">
-            <div class="card-img">${Site.img(p.image, `${p.name} province landscape`)}</div>
-            <div class="card-body p-3"><h3 class="h5 mb-1">${p.name}</h3>
-              <div class="small text-muted mb-1">Capital: ${p.capital}</div>
-              <p class="small mb-0 d-none d-md-block">${p.blurb}</p></div>
-          </a>
-        </div>
-      </div>`).join('');
+    pc.innerHTML = B.provinces.map(Site.provinceCard).join('');
     Site.observe();
   }, SKELETON_MS);
-  pc.addEventListener('click', e => {
-    const h = e.target.closest('[data-fav]'); if (!h) return;
-    const on = Site.favs.toggle(h.dataset.fav);
-    h.classList.toggle('active', on); h.setAttribute('aria-pressed', on);
-    h.innerHTML = `<i class="bi ${on ? 'bi-heart-fill' : 'bi-heart'}"></i>`;
-  });
 
   /* Carousel: autoplay, prev/next, indicators, pause on hover */
   const featureImages = {
@@ -225,6 +205,45 @@ function initHome() {
     try { localStorage.setItem('bicolVisited', JSON.stringify(v)); } catch (e) {}
   };
   ex.addEventListener('change', upd); upd();
+}
+
+/* ==========================================================
+   SAVED PLACES
+   ========================================================== */
+function initSaved() {
+  const grid = $('#savedGrid'), count = $('#savedCountText');
+  const types = ['beaches', 'spots', 'festivals', 'foods'];
+  const render = () => {
+    const keys = new Set(Site.favs.get());
+    const provinces = B.provinces.filter(p => keys.has(Site.favoriteKey('province', p.id)));
+    const destinations = types.flatMap(type => B[type]
+      .filter(item => keys.has(Site.favoriteKey(type, item.id)))
+      .map(item => ({ item, type })));
+    const total = provinces.length + destinations.length;
+    count.textContent = `${total} saved ${total === 1 ? 'place' : 'places'}`;
+    if (!total) {
+      grid.innerHTML = `<div class="col-12"><div class="empty-saved text-center p-5">
+        <i class="bi bi-heart display-4 text-muted" aria-hidden="true"></i>
+        <h2 class="h4 mt-3">Your saved places will show up here</h2>
+        <p class="text-muted">Tap a heart on any province or destination to keep it for later.</p>
+        <a class="btn btn-coral" href="beaches.html">Explore destinations</a>
+      </div></div>`;
+      return;
+    }
+    grid.innerHTML = [
+      ...provinces.map(Site.provinceCard),
+      ...destinations.map(({ item, type }) => Site.card(item, type))
+    ].join('');
+    Site.observe();
+  };
+  grid.addEventListener('click', e => {
+    const button = e.target.closest('[data-open-id]');
+    if (!button) return;
+    const item = types.flatMap(type => B[type]).find(entry => entry.id === button.dataset.openId);
+    if (item) Site.openModal(item);
+  });
+  document.addEventListener('savedplacesrefresh', render);
+  render();
 }
 
 /* ==========================================================
@@ -409,6 +428,7 @@ document.addEventListener('DOMContentLoaded', () => {
     festivals: initFestivals,
     food: initFood,
     history: initHistory,
-    contact: initContact
+    contact: initContact,
+    saved: initSaved
   })[page]?.();
 });

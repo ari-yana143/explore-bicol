@@ -58,13 +58,57 @@ Site.skeleton = (n = 6, col = 'col-sm-6 col-lg-4') =>
 
 /* Favorites (localStorage) */
 Site.favs = {
-  get() { try { return JSON.parse(localStorage.getItem('bicolFavs')) || []; } catch (e) { return []; } },
+  get() {
+    try {
+      const stored = JSON.parse(localStorage.getItem('bicolFavs'));
+      return Array.isArray(stored) ? stored : [];
+    } catch (e) { return []; }
+  },
   toggle(id) {
     const list = this.get(); const i = list.indexOf(id);
     i > -1 ? list.splice(i, 1) : list.push(id);
     try { localStorage.setItem('bicolFavs', JSON.stringify(list)); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('favoriteschange'));
     return i === -1;
   }
+};
+
+Site.favoriteKey = (type, id) => type === 'province' ? id : `${type}:${id}`;
+
+Site.updateFavoriteButton = button => {
+  const saved = Site.favs.get().includes(button.dataset.fav);
+  button.classList.toggle('active', saved);
+  button.setAttribute('aria-pressed', String(saved));
+  button.setAttribute('aria-label', `${saved ? 'Remove' : 'Save'} ${button.dataset.favLabel} ${saved ? 'from' : 'to'} saved places`);
+  const icon = `<i class="bi ${saved ? 'bi-heart-fill' : 'bi-heart'}" aria-hidden="true"></i>`;
+  button.innerHTML = button.id === 'modalFav'
+    ? `${icon}<span class="ms-1">${saved ? 'Saved' : 'Save place'}</span>`
+    : icon;
+};
+
+Site.initFavorites = () => {
+  const refresh = () => {
+    document.querySelectorAll('[data-fav]').forEach(Site.updateFavoriteButton);
+    const count = document.getElementById('savedCount');
+    if (count) {
+      const total = Site.favs.get().length;
+      count.textContent = total;
+      count.closest('.btn-saved').setAttribute('aria-label', `Saved places, ${total} saved`);
+    }
+    document.dispatchEvent(new CustomEvent('savedplacesrefresh'));
+  };
+  document.addEventListener('click', e => {
+    const button = e.target.closest('[data-fav]');
+    if (!button) return;
+    e.preventDefault();
+    e.stopPropagation();
+    Site.favs.toggle(button.dataset.fav);
+  });
+  document.addEventListener('favoriteschange', refresh);
+  window.addEventListener('storage', e => {
+    if (e.key === 'bicolFavs') refresh();
+  });
+  refresh();
 };
 
 /* Loading spinner overlay */
@@ -117,6 +161,9 @@ Site.buildChrome = () => {
             <input id="navSearch" class="search-input form-control" type="search" placeholder="Search places, food, festivals…" autocomplete="off" aria-label="Search" aria-autocomplete="list" aria-controls="navSearchBox" aria-expanded="false">
             <div id="navSearchBox" class="search-box list-group" role="listbox"></div>
           </div>
+          <a class="btn-saved me-lg-2 mb-2 mb-lg-0 ${page === 'saved.html' ? 'active' : ''}" href="saved.html" ${page === 'saved.html' ? 'aria-current="page"' : ''} aria-label="Saved places, 0 saved">
+            <i class="bi bi-heart" aria-hidden="true"></i><span class="saved-label">Saved</span><span class="saved-count" id="savedCount">0</span>
+          </a>
           <button id="themeToggle" class="btn-theme" type="button" aria-label="Toggle light or dark mode"><i class="bi bi-moon-stars-fill"></i></button>
         </div>
       </div>
@@ -135,10 +182,12 @@ Site.buildChrome = () => {
         <div class="col-6 col-lg-3"><h5>Explore</h5><ul class="list-unstyled">
           <li><a href="beaches.html">Beaches</a></li><li><a href="spots.html">Tourist Spots</a></li>
           <li><a href="festivals.html">Festivals</a></li><li><a href="food.html">Food</a></li>
-          <li><a href="history.html">History</a></li><li><a href="contact.html">Plan Your Trip</a></li></ul></div>
+          <li><a href="history.html">History</a></li><li><a href="saved.html">Saved places</a></li>
+          <li><a href="contact.html">Plan Your Trip</a></li></ul></div>
         <div class="col-6 col-lg-5"><div class="row">
           <div class="col-lg-6"><h5>Provinces</h5><ul class="list-unstyled">${provLinks}</ul></div>
-          <div class="col-lg-6"><h5>Project</h5><p class="small">IT ELEC 3 – Web Systems and Technologies<br>Midterm Project</p></div>
+          <div class="col-lg-6"><h5>Project</h5><p class="small">IT ELEC 3 – Web Systems and Technologies<br>Midterm Project</p>
+            <a href="images/PHOTO-CREDITS.txt">Photo credits</a></div>
         </div></div>
       </div>
       <hr class="border-secondary mt-4">
@@ -208,18 +257,52 @@ Site.bindSearch = (input, box) => {
 };
 
 /* ---------- Cards & modal ---------- */
-Site.card = (item, type) => `
+Site.provinceCard = p => {
+  const key = Site.favoriteKey('province', p.id);
+  const saved = Site.favs.get().includes(key);
+  return `
+  <div class="col-6 col-lg-4 reveal">
+    <article class="prov-card h-100 position-relative">
+      <button class="heart-btn ${saved ? 'active' : ''}" data-fav="${key}" data-fav-label="${p.name}" aria-label="${saved ? 'Remove' : 'Save'} ${p.name} ${saved ? 'from' : 'to'} saved places" aria-pressed="${saved}"><i class="bi ${saved ? 'bi-heart-fill' : 'bi-heart'}" aria-hidden="true"></i></button>
+      <a href="history.html#${p.id}">
+        <div class="card-img">${Site.img(p.image, `${p.name} province landscape`)}</div>
+        <div class="card-body p-3"><h3 class="h5 mb-1">${p.name}</h3>
+          <div class="small text-muted mb-1">Capital: ${p.capital}</div>
+          <p class="small mb-0 d-none d-md-block">${p.blurb}</p></div>
+      </a>
+    </article>
+  </div>`;
+};
+
+Site.card = (item, type) => {
+  const key = Site.favoriteKey(type, item.id);
+  const saved = Site.favs.get().includes(key);
+  return `
   <div class="col-sm-6 col-lg-4 reveal">
-    <article class="card dest-card h-100" data-id="${item.id}" tabindex="0" role="button" aria-label="View details for ${item.name}">
-      <div class="card-img">${Site.img(item.image, item.imageAlt)}</div>
+    <article class="card dest-card h-100">
+      <div class="card-img">${Site.img(item.image, item.imageAlt)}
+        <button class="heart-btn ${saved ? 'active' : ''}" data-fav="${key}" data-fav-label="${item.name}" aria-label="${saved ? 'Remove' : 'Save'} ${item.name} ${saved ? 'from' : 'to'} saved places" aria-pressed="${saved}"><i class="bi ${saved ? 'bi-heart-fill' : 'bi-heart'}" aria-hidden="true"></i></button>
+      </div>
       <div class="card-body p-4">
         <span class="badge-prov">${BICOL.provName(item.province)}</span>
         <h3 class="mt-2">${item.name}</h3>
         <p class="text-muted small mb-2">${item.description.length > 105 ? item.description.slice(0, 105) + '…' : item.description}</p>
         ${item.location ? `<div class="card-loc"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> ${item.location}</div>` : ''}
+        <button class="card-detail-link mt-3" type="button" data-open-id="${item.id}">View details</button>
       </div>
     </article>
   </div>`;
+};
+
+Site.visitNote = item => {
+  const notes = {
+    beaches: 'Dryer months are often preferred for beach trips. Check local weather, tide, and sea conditions before you go.',
+    festivals: 'Festival dates can change each year. Confirm the current schedule with the local government before booking.',
+    foods: 'Availability varies by town and season. Ask locally where the dish is prepared.',
+    history: 'Opening hours and access can change. Check with the site or local tourism office before visiting.'
+  };
+  return notes[item.category] || 'Opening hours, access, and conditions can change. Check local advisories before you go.';
+};
 
 Site.buildModal = () => {
   const m = document.createElement('div');
@@ -235,10 +318,15 @@ Site.buildModal = () => {
         <h2 class="h3 mt-2" id="modalTitle"></h2>
         <p id="modalDesc"></p>
         <ul class="list-unstyled small mb-3">
-          <li class="mb-1"><i class="bi bi-geo-alt-fill text-danger"></i> <span id="modalLoc"></span></li>
-          <li><i class="bi bi-flag-fill text-info"></i> Province capital: <span id="modalCap"></span></li>
+          <li class="mb-1"><i class="bi bi-geo-alt-fill text-danger" aria-hidden="true"></i> <span id="modalLoc"></span></li>
+          <li><i class="bi bi-flag-fill text-info" aria-hidden="true"></i> Province capital: <span id="modalCap"></span></li>
         </ul>
-        <a id="modalPlan" class="btn btn-coral" href="contact.html">Plan a visit</a>
+        <div class="visit-note p-3 mb-3"><strong><i class="bi bi-info-circle" aria-hidden="true"></i> Before you go</strong><p class="small mb-0 mt-1" id="modalVisitNote"></p></div>
+        <div class="d-flex flex-wrap gap-2">
+          <a id="modalMap" class="btn btn-outline-primary" href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-map" aria-hidden="true"></i> Open map</a>
+          <button id="modalFav" class="btn btn-outline-danger" type="button"><i class="bi bi-heart" aria-hidden="true"></i> Save place</button>
+          <a id="modalPlan" class="btn btn-coral" href="contact.html">Plan a visit</a>
+        </div>
       </div>
     </div>
   </div></div>`;
@@ -248,12 +336,20 @@ Site.buildModal = () => {
 
 Site.openModal = item => {
   const prov = BICOL.provinces.find(p => p.id === item.province);
+  if (!prov) return;
   document.getElementById('modalImg').innerHTML = Site.img(item.image, item.imageAlt, 'modal-img');
   document.getElementById('modalProv').textContent = prov.name;
   document.getElementById('modalTitle').textContent = item.name;
   document.getElementById('modalDesc').textContent = item.description;
   document.getElementById('modalLoc').textContent = item.location || 'Location not specified in the source';
   document.getElementById('modalCap').textContent = prov.capital;
+  document.getElementById('modalVisitNote').textContent = Site.visitNote(item);
+  const mapQuery = [item.name, item.location, prov.name].filter(Boolean).join(', ');
+  document.getElementById('modalMap').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+  const fav = document.getElementById('modalFav');
+  fav.dataset.fav = Site.favoriteKey(item.category || 'destination', item.id);
+  fav.dataset.favLabel = item.name;
+  Site.updateFavoriteButton(fav);
   document.getElementById('modalPlan').href = 'contact.html?province=' + prov.id;
   Site.modal.show();
 };
@@ -273,6 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Site.buildChrome();
   Site.initHeroVideo();
   Site.initTheme();
+  Site.initFavorites();
   Site.spinner.init();
   Site.buildModal();
   Site.backToTop();
