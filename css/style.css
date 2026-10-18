@@ -168,12 +168,6 @@ a { color: var(--teal); }
 .form-check-input:checked { background-color: var(--teal); border-color: var(--teal); }
 
 /* ---------- Rank bars (food) ---------- */
-.rank-row { display: grid; grid-template-columns: 30px 170px 1fr 48px; gap: .8rem; align-items: center; margin-bottom: .9rem; }
-.rank-num { font-weight: 800; color: var(--coral); }
-.rank-bar { height: 18px; border-radius: 50px; background: rgba(120, 150, 160, .2); overflow: hidden; }
-.rank-fill { height: 100%; width: 0; border-radius: 50px; background: linear-gradient(90deg, var(--teal), var(--aqua)); transition: width 1.2s cubic-bezier(.2, .8, .2, 1); }
-.rank-row:nth-child(-n+3) .rank-fill { background: linear-gradient(90deg, var(--coral), #ffb347); }
-@media (max-width: 575px) { .rank-row { grid-template-columns: 24px 1fr 40px; } .rank-bar { grid-column: 1 / -1; } }
 
 /* ---------- Accordion ---------- */
 .accordion { --bs-accordion-bg: var(--card); --bs-accordion-color: var(--ink); --bs-accordion-border-color: var(--line); --bs-accordion-btn-bg: var(--card); --bs-accordion-btn-color: var(--ink); --bs-accordion-active-bg: rgba(14, 138, 156, .12); --bs-accordion-active-color: var(--teal); --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem rgba(14, 138, 156, .2); }
@@ -278,7 +272,7 @@ a { color: var(--teal); }
 .timeline .tl-year { min-width: 0; max-width: 220px; color: var(--teal); font-size: 1rem; }
 .cta-panel { background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: #fff; }
 .cta-panel h2 { color: #fff; }
-[data-bs-theme="dark"] .hero-number { display: block; margin-bottom: .4rem; color: transparent; font-family: var(--body); font-size: clamp(4.5rem, 10vw, 8rem); font-weight: 800; line-height: .8; -webkit-text-stroke: 1px rgba(255,255,255,.55); }
+.hero-number { display: block; margin-bottom: .4rem; color: transparent; font-family: var(--body); font-size: clamp(4.5rem, 10vw, 8rem); font-weight: 800; line-height: .8; -webkit-text-stroke: 1px rgba(255,255,255,.55); }
 .province-filter { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem !important; }
 .filter-indicator { position: absolute; top: 0; left: 0; z-index: 0; border-radius: 50px; background: var(--teal); pointer-events: none; transition: transform .28s ease, width .28s ease, height .28s ease; }
 .province-filter .btn-pill { position: relative; z-index: 1; }

@@ -277,25 +277,10 @@ function initFestivals() {
 }
 
 /* ==========================================================
-   FOOD (cards + ranking chart)
+   FOOD (cards)
    ========================================================== */
 function initFood() {
   gallery('foods');
-  const rank = $('#rankList'), sort = $('#rankProvince');
-  sort.innerHTML = '<option value="all">All provinces</option>' + B.provinces.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
-  const draw = () => {
-    const list = B.provinces.filter(p => sort.value === 'all' || p.id === sort.value)
-      .map(p => ({ province: p, count: B.foods.filter(food => food.province === p.id).length }))
-      .sort((a, b) => b.count - a.count);
-    const max = Math.max(1, ...list.map(entry => entry.count));
-    rank.innerHTML = list.map((entry, i) => `
-      <div class="rank-row"><span class="rank-num">#${i + 1}</span>
-        <span><strong>${entry.province.name}</strong><br><small class="text-muted">${entry.count} ${entry.count === 1 ? 'item' : 'items'} in the instructor source</small></span>
-        <div class="rank-bar"><div class="rank-fill" data-w="${Math.round(entry.count / max * 100)}"></div></div><span class="fw-bold">${entry.count}</span></div>`).join('');
-    requestAnimationFrame(() => requestAnimationFrame(() => $$('.rank-fill', rank).forEach(b => b.style.width = b.dataset.w + '%')));
-  };
-  draw();
-  sort.addEventListener('change', () => { Site.spinner.show('Updating food counts…'); setTimeout(() => { draw(); Site.spinner.hide(); }, 400); });
 }
 
 /* ==========================================================
